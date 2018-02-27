@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mython_Launcher", "Mython_Launcher\Mython_Launcher.csproj", "{1D9F9E35-D6E4-4E1D-951F-2CF28DEE4884}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbedWinform", "EmbedWinform\EmbedWinform.csproj", "{5F3C3020-CFE4-48C8-BD43-1C6A43F536F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1D9F9E35-D6E4-4E1D-951F-2CF28DEE4884}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D9F9E35-D6E4-4E1D-951F-2CF28DEE4884}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D9F9E35-D6E4-4E1D-951F-2CF28DEE4884}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F3C3020-CFE4-48C8-BD43-1C6A43F536F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F3C3020-CFE4-48C8-BD43-1C6A43F536F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F3C3020-CFE4-48C8-BD43-1C6A43F536F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F3C3020-CFE4-48C8-BD43-1C6A43F536F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

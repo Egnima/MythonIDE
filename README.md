@@ -13,3 +13,7 @@
 3. Minecraft 실행 후 Multiplayer에 Add Server를 누르고 Server Address 는 'localhost'로 설정하고 서버에 접속한다.  
 4. 다시 런처로 돌아와 Python IDE를 실행한다.  
 * https://github.com/Egnima/Mython.git 참조
+
+## 수정 해야 할 점
+- [ ] Minecraft Scratch Mods
+- [ ] Mython Editor
