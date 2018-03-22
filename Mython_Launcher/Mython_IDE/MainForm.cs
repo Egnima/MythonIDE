@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Windows.Forms;
-using System.Diagnostics;
-using System.Threading;
-using System.Net;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
+using System.Net;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace Mython_IDE
 {
@@ -32,7 +32,7 @@ namespace Mython_IDE
 
             if (!Directory.Exists(Environment.CurrentDirectory + @"\Mython"))
             {
-                if (MessageBox.Show("파일이 존재 하지 않습니다.\n 다시 다운 받겠습니까?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                if (MessageBox.Show("파일이 존재 하지 않습니다.\n다시 다운 받겠습니까?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
                 {
                     fileDownload(url, filename);
                 }
