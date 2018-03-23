@@ -11,14 +11,20 @@ namespace Mython_IDE
     public partial class MainForm : Form
     {
         string vscPath = Environment.CurrentDirectory + @"\Mython\src\VSCodePortable\VSCodePortable.exe";
-        string pyInterPath = Environment.CurrentDirectory + @"\Mython\src\VSCodePortable\Python\WinPython Interpreter.exe";
+        string winpyPath = Environment.CurrentDirectory + @"\Mython\src\VSCodePortable\Python";
+        string myPath = Environment.CurrentDirectory + @"\Mython";
 
-        string url = "https://www.dropbox.com/s/2dh44hq153wqok1/Mython.zip?dl=1";
-        string filename = Environment.CurrentDirectory + @"\Mython.zip";
+        string zipUrl = "https://www.dropbox.com/s/lca0ytb29z1asrt/7-Zip.zip?dl=1";
+        string zipFN = Environment.CurrentDirectory + @"\7-Zip.zip";
+
+        string mythonUrl = "https://www.dropbox.com/s/2dh44hq153wqok1/Mython.zip?dl=1";
+        string mythonFN = Environment.CurrentDirectory + @"\Mython.zip";
 
         string[] cb1 = { "true", "false" };
         string[] cb2 = { "DEFAULT", "FLAT", "LARGEBIOMES", "AMPLIFIED" };
         string[] cb3 = { "peaceful", "easy", "normal", "difficult" };
+
+        bool hasZip = false;
 
         public MainForm()
         {
@@ -29,38 +35,113 @@ namespace Mython_IDE
             comboBox1.SelectedIndex = 1;
             comboBox2.SelectedIndex = 1;
             comboBox3.SelectedIndex = 0;
+            tsLbl_Status.Text = "준비";
 
-            if (!Directory.Exists(Environment.CurrentDirectory + @"\Mython"))
+            if (!Directory.Exists(myPath))
             {
-                if (MessageBox.Show("파일이 존재 하지 않습니다.\n다시 다운 받겠습니까?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
+                if (MessageBox.Show("파일이 존재 하지 않습니다.\n다운 받겠습니까?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
                 {
-                    fileDownload(url, filename);
+                    fileDownload(zipUrl, zipFN);
+                    fileDownload(mythonUrl, mythonFN);
                 }
             }
         }
 
         private void btn_Launch_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (checkBox2.Checked == true)
+                    this.WindowState = FormWindowState.Minimized;
+
+                FileHandler f = new FileHandler();
+                Process p = new Process();
+                if (checkBox1.Checked == true)
+                {
+                    p.StartInfo.FileName = vscPath;
+                    p.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
+                    p.Start();
+                }
+                else
+                {
+                    p.StartInfo.FileName = winpyPath + @"\WinPython Interpreter.exe";
+                    p.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
+                    p.Start();
+                }
+                Thread.Sleep(1000);
+                //MessageBox.Show("※주의※ Mython 실행 시 서버를 종료하면 안됩니다.", "서버 실행 중", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                f.Cmd(@"cd Mython\Minecraft Tools\server && start start.bat");
+                Thread.Sleep(1000);
+                //MessageBox.Show("Minecraft 실행 중", "안내", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                f.Cmd(@"cd Mython && start run.bat");  
+            }
+            catch (Win32Exception win32)
+            {
+                MessageBox.Show("Mython 폴더를 지우고 재설치 후 다시 시도해주세요.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void btn_reInstall_Click(object sender, EventArgs e)
+        {
+            // Mython 파일 삭제
+            Directory.Delete(myPath, true);
+            fileDownload(zipUrl, zipFN);
+            fileDownload(mythonUrl, mythonFN);
+        }
+
+        private void btn_server_Click(object sender, EventArgs e)
+        {
             FileHandler f = new FileHandler();
-            Process p = new Process();
-            MessageBox.Show("※주의※ Mython 실행 시 서버를 종료하면 안됩니다.", "서버 실행 중", MessageBoxButtons.OK, MessageBoxIcon.Information);
             f.Cmd(@"cd Mython\Minecraft Tools\server && start start.bat");
-            Thread.Sleep(1000);
-            MessageBox.Show("Minecraft 실행 중", "안내", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btn_mc_Click(object sender, EventArgs e)
+        {
+            FileHandler f = new FileHandler();
             f.Cmd(@"cd Mython && start run.bat");
-            Thread.Sleep(1000);
-            if (checkBox1.Checked == true)
-            {
-                p.StartInfo.FileName = vscPath;
-                p.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
-                p.Start();
-            }
-            else
-            {
-                p.StartInfo.FileName = pyInterPath;
-                p.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
-                p.Start();
-            }
+        }
+
+        private void btn_vsc_Click(object sender, EventArgs e)
+        {
+            Process p = new Process();
+            p.StartInfo.FileName = vscPath;
+            p.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
+            p.Start();
+        }
+
+        private void btn_winpy_Click(object sender, EventArgs e)
+        {
+            Process p = new Process();
+            p.StartInfo.FileName = winpyPath + @"\WinPython Interpreter.exe";
+            p.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
+            p.Start();
+        }
+
+        private void btn_WinPyFolder_Click(object sender, EventArgs e)
+        {
+            Process.Start(winpyPath);
+        }
+
+        private void btn_winpyCMD_Click(object sender, EventArgs e)
+        {
+            Process.Start(winpyPath + @"\WinPython Command Prompt.exe");
+        }
+
+        private void btn_CtrlPanel_Click(object sender, EventArgs e)
+        {
+            Process.Start(winpyPath + @"\WinPython Control Panel.exe");
+        }
+
+        private void btn_editServer_Click(object sender, EventArgs e)
+        {
+            Process p = new Process();
+            p.StartInfo.FileName = Environment.CurrentDirectory + @"\Mython\Minecraft Tools\server\server.properties";
+            p.Start();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -100,23 +181,6 @@ namespace Mython_IDE
             catch { }
         }
 
-        private void tabPage1_Enter(object sender, EventArgs e)
-        {
-            this.Size = new System.Drawing.Size(283, 132);
-        }
-
-        private void tabPage2_Enter(object sender, EventArgs e)
-        {
-            this.Size = new System.Drawing.Size(292, 277);
-        }
-
-        private void btn_editServer_Click(object sender, EventArgs e)
-        {
-            Process p = new Process();
-            p.StartInfo.FileName = Environment.CurrentDirectory + @"\Mython\Minecraft Tools\server\server.properties";
-            p.Start();
-        }
-
         private void fileDownload(string URL, string filename)
         {
             WebClient wc = new WebClient();
@@ -136,32 +200,53 @@ namespace Mython_IDE
         private void Completed(object sender, AsyncCompletedEventArgs e)
         {
             sevenZip zipH = new sevenZip();
-            if (zipH.ExtractFile(Environment.CurrentDirectory + @"\Mython.zip",
-                Environment.CurrentDirectory + @"\Mython") == true)
-                tabControl1.Enabled = true;
-            else
+            if (hasZip == false)
             {
-                if (MessageBox.Show("압축 풀기에 실패했습니다. \n 다시 시도 하시겠습니까?",
-                    "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Retry)
+                if (zipH.ExtractFile(Environment.CurrentDirectory + @"\7-Zip.zip",
+                    Environment.CurrentDirectory + @"\Mython\7-Zip") == true)
+                { }
+            }
+            else if (hasZip == true)
+            {
+                if (zipH.ExtractFile(Environment.CurrentDirectory + @"\Mython.zip",
+                myPath) == true)
                 {
-                    if (zipH.ExtractFile(Environment.CurrentDirectory + @"\Mython.zip",
-                        Environment.CurrentDirectory + @"\Mython") == true)
-                            tabControl1.Enabled = true;
-                    else
-                    {
-                        MessageBox.Show("압축 풀기 실패", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        tabControl1.Enabled = true;
-                    }
+                    tabControl1.Enabled = true;
+                    FileInfo f = new FileInfo(Environment.CurrentDirectory + @"\Mython.zip");
+                    f.Delete();
                 }
             }
-            FileInfo f = new FileInfo(Environment.CurrentDirectory + @"\Mython.zip");
-            f.Delete();
+            else
+            {
+                MessageBox.Show("압축 풀기에 실패했습니다. \n 다시 시도 하시겠습니까?",
+                    "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+            }
+
+            hasZip = true;
+            tsLbl_Status.Text = "다운로드 완료";
         }
 
-        private void btn_reInstall_Click(object sender, EventArgs e)
+
+        private void tabPage1_Enter(object sender, EventArgs e)
         {
-            // Mython 파일 삭제
-            fileDownload(url, filename);
+            this.WindowState = FormWindowState.Normal;
+            this.Size = new System.Drawing.Size(278, 189);
+        }
+
+        private void tabPage2_Enter(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            this.Size = new System.Drawing.Size(278, 487);
+        }
+
+        private void tabPage3_Enter(object sender, EventArgs e)
+        {
+            this.Size = new System.Drawing.Size(434, 190);
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/Egnima");
         }
     }
 }

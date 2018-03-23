@@ -17,5 +17,5 @@
 ## 수정 해야 할 점
 - [ ] Minecraft Scratch Mods
 - [x] Mython Editor
-- [ ] 7zip 압축 풀고 7zip 으로 파일 압축 풀기
-- [ ] Mython 디렉토리 및 파일 모두 삭제 기능 
+- [x] 7zip 압축 풀고 7zip 으로 파일 압축 풀기
+- [x] Mython 디렉토리 및 파일 모두 삭제 기능
