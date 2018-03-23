@@ -17,7 +17,7 @@ namespace Mython_IDE
         string zipUrl = "https://www.dropbox.com/s/lca0ytb29z1asrt/7-Zip.zip?dl=1";
         string zipFN = Environment.CurrentDirectory + @"\7-Zip.zip";
 
-        string mythonUrl = "https://www.dropbox.com/s/2dh44hq153wqok1/Mython.zip?dl=1";
+        string mythonUrl = "https://www.dropbox.com/s/b0nql9d3jr8grcq/Mython.zip?dl=1";
         string mythonFN = Environment.CurrentDirectory + @"\Mython.zip";
 
         string[] cb1 = { "true", "false" };
