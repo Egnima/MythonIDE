@@ -89,9 +89,22 @@ namespace Mython_IDE
         private void btn_reInstall_Click(object sender, EventArgs e)
         {
             tabControl1.Enabled = false;
-            // Mython 파일 삭제
+            DirectoryInfo dir = new DirectoryInfo(myPath);
+
             if (Directory.Exists(myPath))
-                Directory.Delete(myPath, true);
+            {
+                tsLbl_Status.Text = "파일 삭제 중";
+                // Directory.Delete(myPath, true);
+                foreach(FileInfo files in dir.GetFiles())
+                {
+                    files.Delete();
+                }
+                foreach(DirectoryInfo dirs in dir.GetDirectories())
+                {
+                    dirs.Delete(true);
+                }
+            }
+                
 
             fileDownload(zipUrl, zipFN);
             fileDownload(mythonUrl, mythonFN);
@@ -231,7 +244,6 @@ namespace Mython_IDE
             hasZip = true;
             tsLbl_Status.Text = "다운로드 완료";
         }
-
 
         private void tabPage1_Enter(object sender, EventArgs e)
         {

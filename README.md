@@ -15,6 +15,7 @@
 * https://github.com/Egnima/Mython.git 참조
 
 ## 수정 해야 할 점
+- [ ] jPortable 을 이용해 Minecraft 실행
 - [ ] Minecraft Scratch Mods
 - [x] Mython Editor
 - [x] 7zip 압축 풀고 7zip 으로 파일 압축 풀기
