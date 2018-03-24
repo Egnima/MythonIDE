@@ -77,7 +77,7 @@ namespace Mython_IDE
             }
             catch (Win32Exception win32)
             {
-                MessageBox.Show("Mython 폴더를 지우고 재설치 후 다시 시도해주세요.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("파일 재설치 후 다시 시도해주세요.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
@@ -88,8 +88,11 @@ namespace Mython_IDE
 
         private void btn_reInstall_Click(object sender, EventArgs e)
         {
+            tabControl1.Enabled = false;
             // Mython 파일 삭제
-            Directory.Delete(myPath, true);
+            if (Directory.Exists(myPath))
+                Directory.Delete(myPath, true);
+
             fileDownload(zipUrl, zipFN);
             fileDownload(mythonUrl, mythonFN);
         }
@@ -208,6 +211,9 @@ namespace Mython_IDE
             }
             else if (hasZip == true)
             {
+                FileInfo zipf = new FileInfo(Environment.CurrentDirectory + @"\7-Zip.zip");
+                zipf.Delete();
+
                 if (zipH.ExtractFile(Environment.CurrentDirectory + @"\Mython.zip",
                 myPath) == true)
                 {
