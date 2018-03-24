@@ -14,6 +14,9 @@ namespace Mython_IDE
         string winpyPath = Environment.CurrentDirectory + @"\Mython\src\VSCodePortable\Python";
         string myPath = Environment.CurrentDirectory + @"\Mython";
 
+        string serverCMD = @"cd Mython\MythonData\server && start start.bat";
+        string mcCMD = @"cd Mython\MythonData\server\JavaLauncher && start launchMC.bat";
+
         string zipUrl = "https://www.dropbox.com/s/lca0ytb29z1asrt/7-Zip.zip?dl=1";
         string zipFN = Environment.CurrentDirectory + @"\7-Zip.zip";
 
@@ -70,10 +73,10 @@ namespace Mython_IDE
                 }
                 Thread.Sleep(1000);
                 //MessageBox.Show("※주의※ Mython 실행 시 서버를 종료하면 안됩니다.", "서버 실행 중", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                f.Cmd(@"cd Mython\Minecraft Tools\server && start start.bat");
+                f.Cmd(serverCMD);
                 Thread.Sleep(1000);
                 //MessageBox.Show("Minecraft 실행 중", "안내", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                f.Cmd(@"cd Mython && start run.bat");  
+                f.Cmd(mcCMD);  
             }
             catch (Win32Exception win32)
             {
@@ -113,13 +116,13 @@ namespace Mython_IDE
         private void btn_server_Click(object sender, EventArgs e)
         {
             FileHandler f = new FileHandler();
-            f.Cmd(@"cd Mython\Minecraft Tools\server && start start.bat");
+            f.Cmd(serverCMD);
         }
 
         private void btn_mc_Click(object sender, EventArgs e)
         {
             FileHandler f = new FileHandler();
-            f.Cmd(@"cd Mython && start run.bat");
+            f.Cmd(mcCMD);
         }
 
         private void btn_vsc_Click(object sender, EventArgs e)
