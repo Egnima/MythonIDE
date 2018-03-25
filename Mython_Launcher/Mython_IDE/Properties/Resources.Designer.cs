@@ -63,6 +63,16 @@ namespace Mython_IDE.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap editing_your_code_1_562x309_2x_op {
+            get {
+                object obj = ResourceManager.GetObject("editing-your-code-1-562x309@2x-op", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap unity_technologies_squarelogo_1435914706545 {
             get {
                 object obj = ResourceManager.GetObject("unity-technologies-squarelogo-1435914706545", resourceCulture);

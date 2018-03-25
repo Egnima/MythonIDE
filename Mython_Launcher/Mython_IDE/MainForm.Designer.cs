@@ -37,6 +37,8 @@
             this.btn_mc = new System.Windows.Forms.Button();
             this.btn_server = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_CtrlPanel = new System.Windows.Forms.Button();
             this.btn_winpyCMD = new System.Windows.Forms.Button();
@@ -44,34 +46,33 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btn_reInstall = new System.Windows.Forms.Button();
-            this.btn_editServer = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.btn_editServer = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsPsBar = new System.Windows.Forms.ToolStripProgressBar();
             this.tsLbl_Status = new System.Windows.Forms.ToolStripStatusLabel();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.tsbtn = new System.Windows.Forms.ToolStripSplitButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,7 +96,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(264, 459);
+            this.tabControl1.Size = new System.Drawing.Size(431, 161);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -108,7 +109,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(254, 422);
+            this.tabPage1.Size = new System.Drawing.Size(423, 135);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "홈";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -164,11 +165,31 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(256, 433);
+            this.tabPage2.Size = new System.Drawing.Size(423, 135);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "설정";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.checkBox2);
+            this.groupBox4.Location = new System.Drawing.Point(8, 142);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(238, 44);
+            this.groupBox4.TabIndex = 11;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "IDE 설정";
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(6, 20);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(146, 16);
+            this.checkBox2.TabIndex = 0;
+            this.checkBox2.Text = "Mython 실행시 최소화";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -244,16 +265,6 @@
             this.btn_reInstall.UseVisualStyleBackColor = true;
             this.btn_reInstall.Click += new System.EventHandler(this.btn_reInstall_Click);
             // 
-            // btn_editServer
-            // 
-            this.btn_editServer.Location = new System.Drawing.Point(12, 92);
-            this.btn_editServer.Name = "btn_editServer";
-            this.btn_editServer.Size = new System.Drawing.Size(210, 32);
-            this.btn_editServer.TabIndex = 7;
-            this.btn_editServer.Text = "서버 설정";
-            this.btn_editServer.UseVisualStyleBackColor = true;
-            this.btn_editServer.Click += new System.EventHandler(this.btn_editServer_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.comboBox3);
@@ -278,6 +289,16 @@
             this.comboBox3.Size = new System.Drawing.Size(121, 20);
             this.comboBox3.TabIndex = 8;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // btn_editServer
+            // 
+            this.btn_editServer.Location = new System.Drawing.Point(12, 92);
+            this.btn_editServer.Name = "btn_editServer";
+            this.btn_editServer.Size = new System.Drawing.Size(210, 32);
+            this.btn_editServer.TabIndex = 7;
+            this.btn_editServer.Text = "서버 설정";
+            this.btn_editServer.UseVisualStyleBackColor = true;
+            this.btn_editServer.Click += new System.EventHandler(this.btn_editServer_Click);
             // 
             // comboBox2
             // 
@@ -324,14 +345,73 @@
             this.comboBox1.TabIndex = 3;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.pictureBox1);
+            this.tabPage3.Controls.Add(this.linkLabel1);
+            this.tabPage3.Controls.Add(this.label6);
+            this.tabPage3.Controls.Add(this.label5);
+            this.tabPage3.Controls.Add(this.label4);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(423, 135);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "정보";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Enter += new System.EventHandler(this.tabPage3_Enter);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(180, 65);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(65, 23);
+            this.linkLabel1.TabIndex = 3;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Profile";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(120, 65);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 23);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "깃허브 : ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(120, 42);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(282, 23);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "이메일 : chooheonoh@gmail.com";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(120, 19);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(134, 23);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "제작자 : Egnima";
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsPsBar,
-            this.tsLbl_Status});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 437);
+            this.tsLbl_Status,
+            this.tsbtn});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 139);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(264, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(431, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -346,83 +426,15 @@
             this.tsLbl_Status.Size = new System.Drawing.Size(40, 17);
             this.tsLbl_Status.Text = "Status";
             // 
-            // groupBox4
+            // tsbtn
             // 
-            this.groupBox4.Controls.Add(this.checkBox2);
-            this.groupBox4.Location = new System.Drawing.Point(8, 142);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(238, 44);
-            this.groupBox4.TabIndex = 11;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "IDE 설정";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(6, 20);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(146, 16);
-            this.checkBox2.TabIndex = 0;
-            this.checkBox2.Text = "Mython 실행시 최소화";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.pictureBox1);
-            this.tabPage3.Controls.Add(this.linkLabel1);
-            this.tabPage3.Controls.Add(this.label6);
-            this.tabPage3.Controls.Add(this.label5);
-            this.tabPage3.Controls.Add(this.label4);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(410, 125);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "정보";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            this.tabPage3.Enter += new System.EventHandler(this.tabPage3_Enter);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(120, 19);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 23);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "제작자 : Egnima";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(120, 42);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(282, 23);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "이메일 : chooheonoh@gmail.com";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(120, 65);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 23);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "깃허브 : ";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(180, 65);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(134, 23);
-            this.linkLabel1.TabIndex = 3;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Egnima Profile";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.tsbtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbtn.Image = global::Mython_IDE.Properties.Resources.editing_your_code_1_562x309_2x_op;
+            this.tsbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtn.Name = "tsbtn";
+            this.tsbtn.Size = new System.Drawing.Size(75, 20);
+            this.tsbtn.Text = "버그 제보";
+            this.tsbtn.ButtonClick += new System.EventHandler(this.tsbtn_ButtonClick);
             // 
             // pictureBox1
             // 
@@ -438,7 +450,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(264, 459);
+            this.ClientSize = new System.Drawing.Size(431, 161);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -449,17 +461,17 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -502,6 +514,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolStripSplitButton tsbtn;
     }
 }
 

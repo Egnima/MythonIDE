@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_preview_jYK_icon.ico" />
+    <None Include="Resources\editing-your-code-1-562x309%402x-op.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

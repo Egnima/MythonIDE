@@ -269,5 +269,10 @@ namespace Mython_IDE
         {
             Process.Start("https://github.com/Egnima");
         }
+
+        private void tsbtn_ButtonClick(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/Egnima/MythonIDE/issues");
+        }
     }
 }
