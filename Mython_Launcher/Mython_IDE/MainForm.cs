@@ -159,7 +159,7 @@ namespace Mython_IDE
         private void btn_editServer_Click(object sender, EventArgs e)
         {
             Process p = new Process();
-            p.StartInfo.FileName = Environment.CurrentDirectory + @"\Mython\Minecraft Tools\server\server.properties";
+            p.StartInfo.FileName = Environment.CurrentDirectory + @"\Mython\MythonData\server\server.properties";
             p.Start();
         }
 
