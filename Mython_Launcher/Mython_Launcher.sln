@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mython_Launcher (old)", "Mython_Launcher\Mython_Launcher (old).csproj", "{1D9F9E35-D6E4-4E1D-951F-2CF28DEE4884}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mython_IDE", "Mython_IDE\Mython_IDE.csproj", "{1E6E951E-C130-417B-88D0-0DCE17ABD30F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mython_Launcher", "Mython_IDE\Mython_Launcher.csproj", "{1E6E951E-C130-417B-88D0-0DCE17ABD30F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
